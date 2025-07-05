@@ -1,8 +1,8 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useAppDispatch } from "../hooks";
 import { register } from "../store";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
   const [username, setName] = useState("");
@@ -41,6 +41,15 @@ export default function RegisterPage() {
       <Button variant="contained" fullWidth onClick={handleSubmit}>
         Register
       </Button>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        mt={2}
+      >
+        <p>Already have an account?</p>
+        <Link to="/register">Go to login!</Link>
+      </Stack>
     </Box>
   );
 }
