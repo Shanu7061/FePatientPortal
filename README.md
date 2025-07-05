@@ -10,6 +10,7 @@ Key Components current project:
 
 Future Implementation:
 
+Input data validation and sanitization to prevent from XSS attack
 docker and containerization
 GitHub actions for CI-CD setup
 MUI themes and breakpoints for responsiveness
