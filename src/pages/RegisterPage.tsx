@@ -1,18 +1,18 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useAppDispatch } from "../hooks";
-import { register } from "../store/slices/authSlice";
+import { register } from "../store";
 import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
-  const [name, setName] = useState("");
+  const [username, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    const res = await dispatch(register({ name, email, password }));
+    const res = await dispatch(register({ username, email, password }));
     if (register.fulfilled.match(res)) navigate("/dashboard");
   };
 

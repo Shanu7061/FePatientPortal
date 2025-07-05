@@ -1,8 +1,8 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { login } from "../store/slices/authSlice";
-import { useNavigate } from "react-router-dom";
+import { login } from "../store";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -36,6 +36,15 @@ export default function LoginPage() {
       <Button variant="contained" fullWidth onClick={handleSubmit}>
         Login
       </Button>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        mt={2}
+      >
+        <p>Don't have an account?</p>
+        <Link to="/register">Register here!</Link>
+      </Stack>
     </Box>
   );
 }

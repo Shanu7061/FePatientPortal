@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { logout } from "../store/slices/authSlice";
+import { logout } from "../store";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
