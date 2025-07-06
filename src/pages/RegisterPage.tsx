@@ -1,7 +1,7 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useAppDispatch } from "../hooks";
-import { register } from "../store";
+import { register } from "../store/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
@@ -13,7 +13,7 @@ export default function RegisterPage() {
 
   const handleSubmit = async () => {
     const res = await dispatch(register({ username, email, password }));
-    if (register.fulfilled.match(res)) navigate("/dashboard");
+    if (register.fulfilled.match(res)) navigate("/login");
   };
 
   return (

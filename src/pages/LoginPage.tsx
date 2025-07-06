@@ -1,7 +1,7 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { login } from "../store";
+import { login } from "../store/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
@@ -13,7 +13,7 @@ export default function LoginPage() {
 
   const handleSubmit = async () => {
     const res = await dispatch(login({ email, password }));
-    if (login.fulfilled.match(res)) navigate("/dashboard");
+    if (login.fulfilled.match(res)) navigate("/");
   };
 
   return (
